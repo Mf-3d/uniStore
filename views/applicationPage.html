@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <meta property="og:url" content="https://update.mf7cli.tk"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Home"/>
+    <meta property="og:description" content="ここはmf7cliさんのアプリストアです。"/>
+    <meta property="og:image" content="https://bbs.mf7cli.potp.me/image/logo"/>
+    <meta property="og:site_name" content="uniStore"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta charset="UTF-8">
+    <title>
+      uniStore
+    </title>
+    <link href="https://bbs.mf7cli.potp.me/style/style.css" rel="stylesheet">
+    <script>
+      window.onload = () => {
+        document.body.classList.remove("preload");
+      }
+    </script>
+  </head>
+  <body class="preload">
+    <header>
+      <div class="toggle_switch" id="theme_switch" style="display: inline-block; _display: inline;">
+        <input type="checkbox" id="cb_toggle_switch" checked/>
+        <label for="cb_toggle_switch"></label>
+      </div>
+      <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+      <script>
+        const prefersColorSchemeDark = matchMedia(
+          '(prefers-color-scheme: dark)'
+        ).matches;
+      
+        console.log(localStorage.getItem("theme"));
+        
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.className = 'dark';
+          document.getElementById("cb_toggle_switch").checked = false;
+          localStorage.setItem('theme', 'dark');
+        } else if(localStorage.getItem("theme") === "light") {
+          document.body.className = '';
+          document.getElementById("cb_toggle_switch").checked = true;
+          localStorage.setItem('theme', 'light');
+        }
+        else {
+          document.body.className = 'dark';
+          document.getElementById("cb_toggle_switch").checked = false;
+          localStorage.setItem('theme', 'dark');
+        }
+        
+        document.getElementById("cb_toggle_switch").onchange = () => {
+          console.log("ライトかどうか:",document.getElementById("cb_toggle_switch").checked)
+          if (document.getElementById("cb_toggle_switch").checked === false) {
+            document.body.className = 'dark';
+            localStorage.setItem('theme', 'dark');
+          } 
+          else if(document.getElementById("cb_toggle_switch").checked === true) {
+            document.body.className = '';
+            localStorage.setItem('theme', 'light');
+          }
+        }
+      </script>
+    </header>
+    <div id="columnsBox">
+      <h1>uniStore</h1>
+      <br/>
+      <main>
+        <a href="/">Home</a>
+        <br/><br/>
+        <h2 id="appName">test</h2>
+        <br/>
+      </main>
+    </div>
+    <footer>
+        <small>&copy; mf7cli 2022</small>
+        <small><a href="/tos">Term of Service</a></small>
+    </footer>
+  </body>
+</html>

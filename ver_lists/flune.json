@@ -1,0 +1,13 @@
+[
+  {
+    "version": "2.2.0",
+    "isBeta": false,
+    "isDev": false,
+    "beta": null,
+    "dev": null,
+    "package": {
+      "darwin": "https://github.com/Mf-3d/Flune-Browser/releases/download/v2.2.0-beta-3/Flune-Browser-2.2.0-beta3-mac.dmg",
+      "win32": "https://github.com/Mf-3d/Flune-Browser/releases/download/v2.2.0-beta-3/Flune-Browser-2.2.0-beta3-win.zip"
+    }
+  }
+]

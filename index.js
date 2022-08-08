@@ -12,7 +12,7 @@ const server = http.Server(app);
 
 const io = socketIo(server);
 
-// 存在チェック
+// DB存在チェック
 (async () => {
   let appStore = await db.get('store.application');
   if(appStore === null) {
@@ -30,11 +30,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/views/index.html`)
+  res.sendFile(`${__dirname}/views/index.html`);
 });
 
 app.get('/tos', (req, res) => {
-  res.sendFile(`${__dirname}/views/tos.html`)
+  res.sendFile(`${__dirname}/views/tos.html`);
 });
 
 app.get('/login', (req, res) => {
@@ -42,7 +42,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/login/callback', (req, res) => {
-  res.send(`${req.query.user}さん、uniStoreへようこそ！`);
+  res.redirect('/');
 });
 
 app.post('/api/v1/flune_browser/latest', (req, res) => {
